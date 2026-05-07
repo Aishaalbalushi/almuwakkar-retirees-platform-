@@ -1,0 +1,3031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Al Muwakkar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f7f5f2;
+      overflow-x:hidden;
+      color:#222;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      height:85px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 8%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+    }
+
+    .logo img{
+      height:58px;
+      width:auto;
+      display:block;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+    }
+
+    .nav-links a{
+      color:#333;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#A42222;
+    }
+
+    .btn{
+      background:#A42222;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:30px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .btn:hover{
+      background:#7f1717;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      width:100%;
+      padding:160px 8% 80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+      background:
+      linear-gradient(135deg,#A42222 0%,#7f1717 100%);
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:900px;
+      height:900px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      top:-300px;
+      left:-200px;
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      width:700px;
+      height:700px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.05);
+      bottom:-250px;
+      right:-200px;
+    }
+
+    .hero-content{
+      width:50%;
+      position:relative;
+      z-index:2;
+    }
+
+    .tag{
+      display:inline-block;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      color:#fff;
+      padding:10px 24px;
+      border-radius:10px;
+      letter-spacing:3px;
+      margin-bottom:25px;
+      font-size:14px;
+    }
+
+    .hero-content h1{
+      font-size:65px;
+      line-height:1.2;
+      color:#fff;
+      margin-bottom:25px;
+    }
+
+    .hero-content h1 span{
+      color:#ffd7d7;
+    }
+
+    .hero-content p{
+      color:#f4f4f4;
+      line-height:1.8;
+      width:85%;
+      margin-bottom:40px;
+      font-size:17px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .primary-btn{
+      background:#fff;
+      color:#A42222;
+      padding:15px 32px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .video-btn{
+      color:#fff;
+      font-weight:500;
+    }
+
+    /* DEVICES */
+
+    .hero-image{
+      width:45%;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:2;
+    }
+
+    .home-laptop{
+      width:min(100%,620px);
+      position:relative;
+      animation:float 4s ease-in-out infinite;
+      filter:drop-shadow(0 25px 35px rgba(0,0,0,0.25));
+      z-index:2;
+    }
+
+    .home-laptop-screen{
+      background:#191919;
+      border:8px solid #1d1d1d;
+      border-radius:22px 22px 10px 10px;
+      padding:12px;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    .home-laptop-screen img{
+      width:100%;
+      aspect-ratio:16 / 10;
+      object-fit:cover;
+      display:block;
+      border-radius:12px;
+    }
+
+    .home-laptop-base{
+      width:88%;
+      height:20px;
+      margin:auto;
+      background:linear-gradient(180deg,#ece7dc,#b6aa97);
+      border-radius:0 0 26px 26px;
+    }
+
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-15px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* WAVE */
+
+    .wave{
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:100%;
+    }
+
+    /* ABOUT */
+
+    .about-section{
+      width:100%;
+      padding:70px 8%;
+      background:#fff;
+      text-align:center;
+    }
+
+    .about-content .section-label{
+      margin-bottom:18px;
+    }
+
+    .about-content h2{
+      font-size:38px;
+      line-height:1.2;
+      margin-bottom:18px;
+      color:#211818;
+    }
+
+    .about-content{
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .about-intro{
+      color:#666;
+      line-height:1.75;
+      font-size:15px;
+      margin-bottom:24px;
+    }
+
+    .about-tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+      justify-content:center;
+    }
+
+    .about-tab{
+      border:1px solid #f0dada;
+      background:#fff;
+      color:#AF2323;
+      padding:11px 18px;
+      border-radius:30px;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .about-tab.active,
+    .about-tab:hover{
+      background:#AF2323;
+      color:#fff;
+      box-shadow:0 12px 28px rgba(175,35,35,0.18);
+    }
+
+    .about-dynamic-card{
+      min-height:130px;
+      background:#fff;
+      border:1px solid #f0e4e4;
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 12px 35px rgba(164,34,34,0.07);
+      text-align:left;
+    }
+
+    .about-dynamic-card h3{
+      font-size:21px;
+      margin-bottom:10px;
+      color:#211818;
+    }
+
+    .about-dynamic-card p{
+      color:#666;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .about-dynamic-card p + p{
+      margin-top:12px;
+    }
+
+    .about-dynamic-card ul{
+      margin-top:12px;
+      padding-left:20px;
+      color:#666;
+      line-height:1.75;
+      font-size:14px;
+    }
+
+    .about-dynamic-card li + li{
+      margin-top:8px;
+    }
+
+    /* FEATURES */
+
+    .services{
+      min-height:100vh;
+      padding:105px 8% 55px;
+      background:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .section-title{
+      max-width:720px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
+
+    .section-label{
+      display:inline-block;
+      background:#f7e9e9;
+      color:#A42222;
+      padding:8px 18px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      color:#211818;
+      margin-bottom:0;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      min-height:285px;
+      background:#fff;
+      border:1px solid #f0e4e4;
+      border-radius:24px;
+      padding:28px 26px;
+      box-shadow:0 12px 35px rgba(164,34,34,0.07);
+      transition:0.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 18px 45px rgba(164,34,34,0.13);
+      border-color:#eed0d0;
+    }
+
+    .service-visual{
+      width:82px;
+      height:82px;
+      border-radius:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:24px;
+      position:relative;
+      background:linear-gradient(145deg,#fff,#f8eeee);
+      box-shadow:inset 0 -10px 18px rgba(175,35,35,0.08), 0 16px 30px rgba(164,34,34,0.12);
+    }
+
+    .service-visual::after{
+      content:'';
+      position:absolute;
+      width:38px;
+      height:12px;
+      border-radius:50%;
+      background:rgba(175,35,35,0.12);
+      bottom:-8px;
+      filter:blur(4px);
+    }
+
+    .service-visual svg{
+      width:48px;
+      height:48px;
+      filter:drop-shadow(0 8px 10px rgba(0,0,0,0.14));
+    }
+
+    .service-visual svg *{
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .service-card h3{
+      color:#211818;
+      font-size:19px;
+      margin-bottom:10px;
+    }
+
+    .service-card p{
+      color:#777;
+      line-height:1.6;
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1100px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:150px;
+      }
+
+      .hero-content{
+        width:100%;
+      }
+
+      .hero-content p{
+        width:100%;
+      }
+
+      .hero-image{
+        width:100%;
+        margin-top:70px;
+      }
+
+      .home-laptop{
+        width:90%;
+      }
+
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-content h1{
+        font-size:48px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .services-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .card-benefits-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .about-content{
+        max-width:720px;
+      }
+    }
+    .card-section{
+      padding:80px 8%;
+      background:#fff;
+    }
+
+    .card-benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-bottom:30px;
+    }
+
+    .card-benefit{
+      min-height:170px;
+      background:#fff;
+      border:1px solid #f0e4e4;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 12px 35px rgba(164,34,34,0.07);
+      transition:0.3s;
+    }
+
+    .card-benefit:hover{
+      transform:translateY(-8px);
+      box-shadow:0 18px 45px rgba(164,34,34,0.13);
+      border-color:#eed0d0;
+    }
+
+    .benefit-icon{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#A42222;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      margin-bottom:18px;
+      font-size:14px;
+    }
+
+    .card-benefit h3{
+      color:#211818;
+      font-size:19px;
+      margin-bottom:10px;
+    }
+
+    .card-benefit p{
+      color:#777;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .card-action{
+      text-align:center;
+    }
+
+    .card-btn{
+      display:inline-block;
+      background:#A42222;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .card-btn:hover{
+      background:#8d1c1c;
+      transform:translateY(-3px);
+    }
+    /* =========================
+   HOW SECTION
+========================= */
+
+.how-section{
+  width:100%;
+
+  padding:70px 8%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:55px;
+
+  background:
+  radial-gradient(circle at 18% 20%, rgba(175,35,35,0.04), transparent 28%),
+  linear-gradient(135deg,#fbfbfd 0%,#f8f7fb 55%,#fbf6f7 100%);
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.how-left{
+  width:45%;
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* BACKGROUND */
+
+.circle-bg{
+  width:360px;
+  height:360px;
+
+  border-radius:50%;
+
+  background:#AF2323;
+
+  opacity:0.16;
+
+  position:absolute;
+}
+
+/* IMAGE */
+
+.how-image{
+  width:100%;
+  max-width:310px;
+
+  position:relative;
+  z-index:2;
+
+  animation:float 5s ease-in-out infinite;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.how-right{
+  width:50%;
+}
+
+.how-right h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.how-text{
+  color:#666;
+
+  line-height:1.6;
+
+  margin-bottom:28px;
+
+  font-size:15px;
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.steps-container{
+  position:relative;
+}
+
+/* STEP */
+
+.step{
+  display:flex;
+  align-items:flex-start;
+
+  gap:16px;
+
+  margin-bottom:18px;
+
+  opacity:0.2;
+
+  transform:translateY(20px);
+
+  transition:0.5s;
+}
+
+/* ACTIVE STEP */
+
+.step.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ICON */
+
+.step-icon{
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  background:#f5d7d7;
+
+  color:#AF2323;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:700;
+  font-size:15px;
+
+  position:relative;
+
+  flex-shrink:0;
+}
+
+/* LINE */
+
+.step-icon::after{
+  content:'';
+
+  position:absolute;
+
+  width:2px;
+  height:38px;
+
+  background:#eadada;
+
+  top:44px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+}
+
+.step:last-child .step-icon::after{
+  display:none;
+}
+
+/* TEXT */
+
+.step-content h3{
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.step-content p{
+  color:#666;
+  line-height:1.55;
+  font-size:14px;
+}
+
+/* ACTIVE COLOR */
+
+.step.active .step-icon{
+  background:#AF2323;
+  color:#fff;
+
+  box-shadow:0 10px 25px rgba(175,35,35,0.25);
+}
+/* =========================
+   DEMO SECTION
+========================= */
+
+.demo-section{
+  width:100%;
+
+  padding:75px 8%;
+  scroll-margin-top:95px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:55px;
+
+  background:#fff;
+
+  overflow:hidden;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.demo-content{
+  width:40%;
+}
+
+.demo-small-title{
+  color:#AF2323;
+
+  font-size:14px;
+  font-weight:700;
+
+  letter-spacing:2px;
+}
+
+.demo-content h2{
+  font-size:42px;
+
+  line-height:1.2;
+
+  margin-top:14px;
+  margin-bottom:16px;
+}
+
+.demo-content h2 span{
+  color:#AF2323;
+}
+
+.demo-content p{
+  color:#666;
+
+  font-size:15px;
+
+  line-height:1.65;
+
+  margin-bottom:0;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.laptop-container{
+  width:55%;
+
+  position:relative;
+
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:24px;
+}
+
+/* GLOW */
+
+.laptop-glow{
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(135deg,#AF2323 0%, #DDD3C0 100%);
+
+  opacity:0.15;
+
+  filter:blur(20px);
+}
+
+/* =========================
+   MACBOOK
+========================= */
+
+.laptop-frame{
+  width:calc(100% - 238px);
+  min-width:300px;
+  max-width:540px;
+
+  position:relative;
+
+  z-index:2;
+
+  animation:laptopFloat 5s ease-in-out infinite;
+}
+
+/* =========================
+   IPHONE
+========================= */
+
+.phone-frame{
+  width:214px;
+  aspect-ratio:9 / 19.5;
+
+  position:relative;
+
+  z-index:4;
+  flex-shrink:0;
+
+  padding:0;
+
+  background:
+  linear-gradient(145deg,#4a4c50 0%,#1a1b1f 45%,#6f7278 100%);
+
+  border:3px solid #2b2d31;
+  border-radius:42px;
+
+  box-shadow:
+  0 24px 42px rgba(0,0,0,0.28),
+  inset 0 0 0 1px rgba(255,255,255,0.16),
+  inset 0 0 0 4px rgba(0,0,0,0.16);
+
+  animation:phoneFloat 5s ease-in-out infinite;
+  animation-delay:0.35s;
+}
+
+.phone-frame::before,
+.phone-frame::after{
+  content:'';
+  position:absolute;
+  width:3px;
+  background:#202226;
+  border-radius:4px;
+}
+
+.phone-frame::before{
+  height:52px;
+  left:-5px;
+  top:86px;
+}
+
+.phone-frame::after{
+  height:76px;
+  right:-5px;
+  top:118px;
+}
+
+.phone-notch{
+  display:none;
+}
+
+.phone-screen{
+  width:calc(100% - 8px);
+  height:calc(100% - 8px);
+
+  position:absolute;
+  inset:4px;
+
+  overflow:hidden;
+
+  background:transparent;
+
+  border-radius:38px;
+}
+
+.phone-screen iframe{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  border:0;
+}
+
+/* SCREEN FRAME */
+
+.screen{
+  width:100%;
+  height:370px;
+
+  background:#050505;
+
+  border-radius:22px 22px 16px 16px;
+
+  padding:10px;
+
+  overflow:hidden;
+
+  border:8px solid #191a1d;
+
+  box-shadow:
+  0 30px 50px rgba(0,0,0,0.18),
+  inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* MACBOOK CAMERA NOTCH */
+
+.camera{
+  width:76px;
+  height:22px;
+
+  border-radius:0 0 14px 14px;
+
+  background:#080808;
+
+  position:absolute;
+
+  top:8px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  z-index:3;
+}
+
+/* VIDEO */
+
+.screen iframe{
+  width:100%;
+  height:100%;
+
+  border-radius:12px;
+
+  background:#111;
+
+  display:block;
+
+  border:0;
+}
+
+/* KEYBOARD */
+
+.keyboard{
+  width:116%;
+  height:24px;
+
+  position:relative;
+
+  background:linear-gradient(180deg,#f1eee8 0%,#c9c2b8 52%,#9f9688 100%);
+
+  margin:auto;
+
+  border-radius:0 0 28px 28px;
+
+  transform:translateX(-6.5%);
+
+  box-shadow:
+  0 10px 20px rgba(0,0,0,0.08);
+}
+
+.keyboard::before{
+  content:'';
+  position:absolute;
+  width:72px;
+  height:6px;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  background:rgba(80,73,65,0.28);
+  border-radius:0 0 10px 10px;
+}
+
+/* =========================
+   FLOAT
+========================= */
+
+@keyframes laptopFloat{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-14px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+@keyframes phoneFloat{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .demo-section{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .demo-content{
+    width:100%;
+  }
+
+  .laptop-container{
+    width:100%;
+  }
+
+  .laptop-frame{
+    width:min(68%,560px);
+    min-width:0;
+  }
+
+  .phone-frame{
+    width:190px;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .demo-content h2{
+    font-size:34px;
+  }
+
+  .laptop-frame{
+    width:min(68%,520px);
+  }
+
+  .screen{
+    height:260px;
+  }
+
+  .phone-frame{
+    width:156px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .laptop-container{
+    gap:12px;
+  }
+
+  .screen{
+    height:220px;
+    padding:10px;
+  }
+
+  .phone-frame{
+    width:126px;
+    border-radius:28px;
+  }
+
+  .phone-screen{
+    border-radius:20px;
+  }
+
+  .demo-content h2{
+    font-size:34px;
+  }
+
+}
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.choose-section{
+  width:100%;
+
+  padding:70px 8%;
+
+  background:
+  radial-gradient(circle at 20% 25%, rgba(175,35,35,0.035), transparent 30%),
+  linear-gradient(135deg,#fbfbfd 0%,#f8f7fb 55%,#fbf6f7 100%);
+
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.choose-image{
+  position:relative;
+  min-height:390px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.choose-image img{
+  width:min(100%,390px);
+  position:relative;
+  z-index:2;
+  mix-blend-mode:multiply;
+}
+
+.choose-content{
+  max-width:640px;
+}
+
+.choose-content h2{
+  font-size:42px;
+  margin-bottom:14px;
+  color:#211818;
+}
+
+.choose-content > p{
+  color:#666;
+  line-height:1.7;
+  font-size:15px;
+  margin-bottom:28px;
+}
+
+.choose-hover-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.choose-hover-item{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:16px;
+  align-items:center;
+  padding:14px;
+  background:#fff;
+  border:1px solid #f0e4e4;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(164,34,34,0.07);
+  transition:0.3s;
+}
+
+.choose-hover-item:hover{
+  box-shadow:0 18px 45px rgba(164,34,34,0.13);
+  border-color:#eed0d0;
+}
+
+.choose-circle{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#AF2323;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:700;
+  box-shadow:0 14px 30px rgba(175,35,35,0.2);
+  flex-shrink:0;
+}
+
+.choose-hover-text{
+  max-height:24px;
+  overflow:hidden;
+  transition:0.35s;
+}
+
+.choose-hover-item:hover .choose-hover-text{
+  max-height:150px;
+}
+
+.choose-hover-text h3{
+  font-size:18px;
+  color:#211818;
+  margin-bottom:8px;
+}
+
+.choose-hover-text p{
+  color:#666;
+  line-height:1.6;
+  font-size:14px;
+  opacity:0;
+  transform:translateY(6px);
+  transition:0.3s;
+}
+
+.choose-hover-item:hover .choose-hover-text p{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .choose-section{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .choose-content{
+    max-width:760px;
+    margin:auto;
+  }
+
+  .choose-hover-item{
+    text-align:left;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .choose-content h2{
+    font-size:32px;
+  }
+
+  .choose-image{
+    min-height:300px;
+  }
+
+  .choose-image img{
+    width:min(100%,300px);
+  }
+
+  .choose-hover-item{
+    grid-template-columns:48px 1fr;
+    padding:12px;
+  }
+
+  .choose-circle{
+    width:48px;
+    height:48px;
+    font-size:15px;
+  }
+
+}
+/* =========================
+   FEATURE SLIDER SECTION
+========================= */
+
+.feature-slider-section{
+  width:100%;
+
+  padding:70px 8%;
+
+  background:#fff;
+
+  text-align:center;
+}
+
+/* TITLE */
+
+.feature-title h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.feature-title p{
+  width:min(100%,620px);
+  margin:auto;
+
+  color:#666;
+
+  line-height:1.6;
+  font-size:15px;
+
+  margin-bottom:42px;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.feature-slider-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:28px;
+}
+
+/* BUTTONS */
+
+.slide-btn{
+  width:38px;
+  height:38px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#f7e9e9;
+
+  color:#AF2323;
+
+  font-size:20px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  flex-shrink:0;
+}
+
+.slide-btn:hover{
+  background:#AF2323;
+  color:#fff;
+}
+
+/* FEATURES CONTAINER */
+
+.feature-slider{
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:22px;
+}
+
+/* FEATURE ITEM */
+
+.feature-item{
+  display:none;
+  min-height:190px;
+  padding:24px 20px;
+  background:#fff;
+  border:1px solid #f0e4e4;
+  border-radius:18px;
+  opacity:0;
+  transform:translateX(18px) scale(0.98);
+
+  transition:0.5s;
+
+  pointer-events:none;
+  box-shadow:0 12px 35px rgba(164,34,34,0.07);
+}
+
+.feature-item.active{
+  display:block;
+  opacity:1;
+  transform:translateX(0) scale(1);
+
+  pointer-events:auto;
+}
+
+/* ICON */
+
+.feature-icon{
+  width:52px;
+  height:52px;
+
+  border-radius:16px;
+
+  margin:auto;
+  margin-bottom:18px;
+
+  background:
+  linear-gradient(135deg,#AF2323 0%, #d97f7f 100%);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:700;
+
+  box-shadow:0 12px 30px rgba(175,35,35,0.2);
+}
+
+.feature-icon svg{
+  width:26px;
+  height:26px;
+  stroke:#fff;
+  stroke-width:2.2;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* TEXT */
+
+.feature-item h3{
+  font-size:19px;
+  margin-bottom:10px;
+}
+
+.feature-item p{
+  color:#666;
+  line-height:1.6;
+  font-size:14px;
+
+  width:100%;
+  margin:auto;
+}
+
+/* =========================
+   LINE
+========================= */
+
+.slider-line{
+  width:260px;
+  height:3px;
+
+  background:#ece2e2;
+
+  border-radius:20px;
+
+  margin:36px auto 0;
+
+  overflow:hidden;
+}
+
+.slider-progress{
+  width:50%;
+  height:100%;
+
+  background:
+  linear-gradient(90deg,#AF2323,#d97f7f);
+
+  transition:0.4s;
+}
+
+/* =========================
+   OUR TEAM SECTION
+========================= */
+
+.team-section{
+  width:100%;
+  padding:75px 8%;
+  background:#FFFFFF;
+  overflow:hidden;
+}
+
+.team-top{
+  display:grid;
+  grid-template-columns:0.95fr 1.05fr;
+  gap:48px;
+  align-items:center;
+  margin-bottom:34px;
+}
+
+.team-title{
+  max-width:560px;
+  text-align:left;
+}
+
+.team-title h2{
+  font-size:38px;
+  color:#211818;
+  margin:14px 0 12px;
+}
+
+.team-title p{
+  color:#666;
+  line-height:1.65;
+  font-size:15px;
+}
+
+.team-hero{
+  width:100%;
+  min-height:380px;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#FFFFFF;
+  border:none;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(164,34,34,0.08);
+  position:relative;
+}
+
+.team-hero img{
+  width:100%;
+  height:100%;
+  max-height:470px;
+  object-fit:contain;
+  display:block;
+}
+
+.team-placeholder{
+  display:none;
+  padding:34px;
+  color:#AF2323;
+  font-weight:600;
+}
+
+.team-hero.missing img{
+  display:none;
+}
+
+.team-hero.missing .team-placeholder{
+  display:block;
+}
+
+.team-name-label{
+  position:absolute;
+  top:70%;
+  padding:9px 16px;
+  border-radius:30px;
+  background:#AF2323;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  opacity:0;
+  white-space:nowrap;
+  transform:translate(-50%, 12px);
+  transition:0.35s;
+  box-shadow:0 14px 28px rgba(175,35,35,0.22);
+  pointer-events:none;
+}
+
+.team-hero:hover .team-name-label{
+  opacity:1;
+  transform:translate(-50%, 0);
+}
+
+.team-name-label.nouf{
+  left:23%;
+}
+
+.team-name-label.fatima{
+  left:48%;
+}
+
+.team-name-label.aysha{
+  left:72%;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.team-card{
+  display:block;
+  background:#fff;
+  border:1px solid #f3eeee;
+  border-radius:18px;
+  padding:20px;
+  text-align:left;
+  box-shadow:0 14px 34px rgba(0,0,0,0.06);
+  opacity:0;
+  transform:translateY(22px);
+  transition:0.55s;
+  color:inherit;
+  position:relative;
+  overflow:hidden;
+}
+
+.team-card::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:4px;
+  background:#AF2323;
+  transition:0.35s;
+}
+
+.team-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(164,34,34,0.12);
+}
+
+.team-card:hover::after{
+  width:100%;
+}
+
+.team-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.member-photo{
+  width:88px;
+  height:88px;
+  border-radius:18px;
+  background:#AF2323;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  overflow:hidden;
+  box-shadow:0 14px 30px rgba(175,35,35,0.18);
+}
+
+.member-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.member-fallback{
+  color:#fff;
+  font-size:24px;
+  font-weight:700;
+}
+
+.team-card h3{
+  font-size:20px;
+  color:#211818;
+  margin-bottom:8px;
+}
+
+.team-role{
+  color:#AF2323;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.team-card p{
+  color:#666;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.profile-link{
+  color:#AF2323;
+  font-weight:700;
+  font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  background:#FFFFFF;
+  color:#211818;
+  padding:55px 8% 24px;
+  border-top:1px solid #f0e4e4;
+}
+
+.footer-content{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:36px;
+  padding-bottom:34px;
+  border-bottom:1px solid #f0e4e4;
+}
+
+.footer-logo{
+  height:68px;
+  width:auto;
+  display:block;
+  margin-bottom:16px;
+}
+
+.footer-brand p,
+.footer-links a,
+.footer-bottom{
+  color:#666;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.footer-column h3{
+  font-size:18px;
+  margin-bottom:16px;
+  color:#211818;
+}
+
+.footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.footer-links a{
+  transition:0.3s;
+}
+
+.footer-links a:hover{
+  color:#AF2323;
+  transform:translateX(4px);
+}
+
+.footer-socials{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+}
+
+.social-icon{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f7e9e9;
+  color:#AF2323;
+  transition:0.3s;
+}
+
+.social-icon:hover{
+  background:#AF2323;
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+.social-icon svg{
+  width:20px;
+  height:20px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.social-icon.youtube svg{
+  fill:currentColor;
+  stroke:none;
+}
+
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding-top:22px;
+}
+
+.footer-tag{
+  color:#AF2323;
+  font-weight:600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .feature-slider{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .feature-title h2{
+    font-size:34px;
+  }
+
+  .feature-title p{
+    width:100%;
+  }
+
+  .team-top{
+    grid-template-columns:1fr;
+  }
+
+  .team-title{
+    max-width:720px;
+    text-align:center;
+    margin:0 auto;
+  }
+
+  .team-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-content{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .team-card{
+    text-align:center;
+  }
+
+  .member-photo{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .feature-slider-wrapper{
+    gap:15px;
+  }
+
+  .feature-slider{
+    grid-template-columns:1fr;
+  }
+
+  .feature-item h3{
+    font-size:18px;
+  }
+
+  .feature-title h2{
+    font-size:30px;
+  }
+
+  .team-section{
+    padding:62px 6%;
+  }
+
+  .team-title h2{
+    font-size:30px;
+  }
+
+  .team-hero{
+    min-height:280px;
+    border-radius:20px;
+  }
+
+  .team-name-label{
+    top:68%;
+    font-size:12px;
+    padding:7px 12px;
+  }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .how-section{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .how-left{
+    width:100%;
+  }
+
+  .how-right{
+    width:100%;
+  }
+
+  .step{
+    text-align:left;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .how-right h2{
+    font-size:32px;
+  }
+
+  .circle-bg{
+    width:230px;
+    height:230px;
+  }
+
+}
+
+    @media(max-width:600px){
+
+      .hero-content h1{
+        font-size:38px;
+      }
+
+
+      .logo img{
+        height:46px;
+      }
+
+      .services{
+        min-height:auto;
+        padding:80px 6%;
+      }
+
+      .about-section{
+        padding:60px 6%;
+      }
+
+      .about-content h2{
+        font-size:30px;
+      }
+
+      .about-tabs{
+        flex-direction:column;
+      }
+
+      .card-section{
+        padding:70px 6%;
+      }
+
+      .section-title h2{
+        font-size:30px;
+      }
+
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .card-benefits-grid{
+        grid-template-columns:1fr;
+      }
+      
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      <img src="image/logo.png" alt="Al Muwakkar logo">
+    </div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="tag">
+        RETIREMENT SUPPORT PLATFORM
+      </div>
+
+      <h1>
+        A Better Digital Experience
+        <br>
+        for <span>Retirees</span>
+      </h1>
+
+      <p>
+        Al Muwakkar helps retirees access jobs, discounts, trips,
+        clubs, events, and support services through one simple
+        and easy-to-use platform designed for comfort and accessibility.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#services" class="primary-btn">
+          Explore Services
+        </a>
+
+        <a href="#website-demo" class="video-btn">
+          ▶ Watch Demo
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="hero-image">
+
+      <!-- LAPTOP -->
+
+      <div class="home-laptop" aria-label="Al Muwakkar website preview">
+        <div class="home-laptop-screen">
+          <img src="image/web.png" alt="Al Muwakkar website shown inside laptop">
+        </div>
+        <div class="home-laptop-base"></div>
+      </div>
+
+    </div>
+
+    <!-- WAVE -->
+
+    <svg class="wave" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1"
+      d="M0,224L80,224C160,224,320,224,480,240C640,256,800,288,960,277.3C1120,267,1280,213,1360,186.7L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+      </path>
+    </svg>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about-section" id="about">
+
+    <div class="about-content">
+      <span class="section-label">ABOUT AL MUWAKKAR</span>
+
+      <h2>A digital platform created for life after retirement.</h2>
+
+      <p class="about-intro">
+        Al Muwakkar is a senior project built to improve retirees' quality of
+        life through easier access to useful services, social activities,
+        financial benefits, and wellbeing support.
+      </p>
+
+      <div class="about-tabs" aria-label="About Al Muwakkar details">
+        <button class="about-tab active" type="button" data-about="vision">Vision</button>
+        <button class="about-tab" type="button" data-about="mission">Mission</button>
+        <button class="about-tab" type="button" data-about="purpose">Purpose</button>
+        <button class="about-tab" type="button" data-about="identity">Name & Logo</button>
+      </div>
+
+      <div class="about-dynamic-card" id="aboutDynamicCard">
+        <h3>Empower retirees to stay active</h3>
+        <p>
+          To become the leading platform that empowers retirees to stay active,
+          engaged, and valued in their community.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="section-title">
+      <span class="section-label">OUR SERVICES</span>
+      <h2>Explore Al Muwakkar Services</h2>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-visual">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="13" y="24" width="38" height="28" rx="6" fill="#A42222"></rect>
+            <path d="M24 24v-5c0-4 3-7 8-7s8 3 8 7v5" fill="none" stroke="#D6B36A" stroke-width="5"></path>
+            <path d="M20 36h24" stroke="#fff" stroke-width="5"></path>
+          </svg>
+        </div>
+        <h3>Part Time Jobs</h3>
+        <p>
+          Retirees can browse and apply for suitable job opportunities posted
+          by companies.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-visual">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M10 35l44-16-16 36-8-15-15-5z" fill="#D6B36A"></path>
+            <path d="M30 40l24-21" stroke="#A42222" stroke-width="5"></path>
+            <circle cx="16" cy="17" r="5" fill="#A42222"></circle>
+          </svg>
+        </div>
+        <h3>Travel Programs</h3>
+        <p>
+          Users can explore and register for different types of trips such as
+          cultural, relaxation, and adventure trips.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-visual">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="22" cy="24" r="9" fill="#D6B36A"></circle>
+            <circle cx="42" cy="24" r="9" fill="#A42222"></circle>
+            <path d="M12 50c2-10 18-10 20 0" fill="#D6B36A"></path>
+            <path d="M32 50c2-10 18-10 20 0" fill="#A42222"></path>
+          </svg>
+        </div>
+        <h3>Clubs</h3>
+        <p>
+          Retirees can join interest-based WhatsApp groups such as reading,
+          gardening, art, and social clubs.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-visual">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="14" y="15" width="36" height="39" rx="7" fill="#A42222"></rect>
+            <path d="M22 12v9M42 12v9M20 30h24M20 41h15" stroke="#fff" stroke-width="5"></path>
+            <circle cx="45" cy="45" r="8" fill="#D6B36A"></circle>
+          </svg>
+        </div>
+        <h3>Events & Volunteering</h3>
+        <p>
+          The platform provides community events and volunteer opportunities
+          to encourage social participation.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-visual">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="10" y="20" width="44" height="28" rx="7" fill="#D6B36A"></rect>
+            <path d="M16 30h32" stroke="#A42222" stroke-width="5"></path>
+            <circle cx="23" cy="40" r="4" fill="#A42222"></circle>
+            <path d="M37 39h10" stroke="#fff" stroke-width="4"></path>
+          </svg>
+        </div>
+        <h3>Discount Card System</h3>
+        <p>
+          Retirees can apply for the Al Muwakkar discount card to receive
+          discounts from participating stores and businesses.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-visual">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 54s-18-10-18-27c0-8 6-14 14-14 4 0 7 2 10 5 3-3 6-5 10-5 8 0 14 6 14 14 0 17-18 27-18 27z" fill="#A42222"></path>
+            <path d="M22 34h8l3-8 5 15 3-7h7" stroke="#fff" stroke-width="4" fill="none"></path>
+            <circle cx="18" cy="18" r="5" fill="#D6B36A"></circle>
+          </svg>
+        </div>
+        <h3>Health Support Service</h3>
+        <p>
+          Includes mental support through chatting with the Alwaqar bot, plus
+          meeting a trainer who guides retirees in physical fitness.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+<!-- =========================
+     HOW IT WORKS SECTION
+========================= -->
+
+<section class="how-section">
+
+  <!-- LEFT SIDE -->
+
+  <div class="how-left">
+
+    <div class="circle-bg"></div>
+
+    <img
+    src="image/card2-transparent.png"
+    alt="How it works"
+    class="how-image">
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+
+  <div class="how-right">
+
+    <span class="section-label">EXCLUSIVE BENEFITS</span>
+
+    <h2>How Does It Works?</h2>
+
+    <p class="how-text">
+      Follow simple steps to receive your Al Muwakkar Card
+      and enjoy exclusive retiree benefits.
+    </p>
+
+    <!-- STEPS -->
+
+    <div class="steps-container">
+
+      <!-- STEP -->
+
+      <div class="step active">
+
+        <div class="step-icon">
+          1
+        </div>
+
+        <div class="step-content">
+
+          <h3>Create an Account</h3>
+
+          <p>
+            Sign up and create your Al Muwakkar account.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+
+      <div class="step">
+
+        <div class="step-icon">
+          2
+        </div>
+
+        <div class="step-content">
+
+          <h3>Log Into Your Account</h3>
+
+          <p>
+            Access your account securely to continue.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+
+      <div class="step">
+
+        <div class="step-icon">
+          3
+        </div>
+
+        <div class="step-content">
+
+          <h3>Upload Retirement Document</h3>
+
+          <p>
+            Submit your retirement proof document.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+
+      <div class="step">
+
+        <div class="step-icon">
+          4
+        </div>
+
+        <div class="step-content">
+
+          <h3>Wait for Approval</h3>
+
+          <p>
+            Verification usually takes around 2–3 working days.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+
+      <div class="step">
+
+        <div class="step-icon">
+          5
+        </div>
+
+        <div class="step-content">
+
+          <h3>Enjoy Your Benefits</h3>
+
+          <p>
+            Access discounts and request your physical card.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  const steps = document.querySelectorAll(".step");
+  const aboutTabs = document.querySelectorAll(".about-tab");
+  const aboutDynamicCard = document.querySelector("#aboutDynamicCard");
+
+  const aboutContent = {
+    vision: {
+      title: "Empower retirees to stay active",
+      text: [
+        "To become the leading platform that empowers retirees to stay active, engaged, and valued in their community."
+      ]
+    },
+    mission: {
+      title: "Create trusted access to meaningful services",
+      items: [
+        "Provide access to verified clubs and activities",
+        "Offer exclusive discounts through Al Muwakkar Card",
+        "Encourage physical and mental well-being",
+        "Create a safe and trusted environment for retirees"
+      ]
+    },
+    purpose: {
+      title: "Make everyday access easier",
+      text: [
+        "Al Muwakkar gathers jobs, trips, clubs, discounts, volunteering, and health support in one place so users do not need to search across many systems."
+      ]
+    },
+    identity: {
+      title: "The meaning behind the name and logo",
+      text: [
+        "The word \"Al-Muwaqqar\" is derived from waqar, meaning dignity. It reflects serenity, composure, and poise, qualities that characterize this stage of life. It also conveys reverence and respect for a person who has reached a phase rich with experience and wisdom, earning high regard within society.",
+        "The logo consists of three palm trees of different sizes: large, medium, and small. The palm tree symbolizes generosity, strength, and patience, and is one of the most authentic emblems in Arab culture. The large palm represents Al-Muwaqqar, carrying long-acquired wisdom and experience and passing it to younger generations, reinforcing knowledge transfer and harmony between seasoned expertise and fresh aspirations."
+      ]
+    }
+  };
+
+  let current = 0;
+
+  function showSteps(){
+
+    steps.forEach((step,index)=>{
+
+      step.classList.remove("active");
+
+      if(index <= current){
+        step.classList.add("active");
+      }
+
+    });
+
+    current++;
+
+    if(current >= steps.length){
+      current = 0;
+    }
+
+  }
+
+  setInterval(showSteps,2000);
+
+  aboutTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const selected = aboutContent[tab.dataset.about];
+
+      aboutTabs.forEach((item) => item.classList.remove("active"));
+      tab.classList.add("active");
+
+      const paragraphs = selected.text
+        ? selected.text.map((paragraph) => `<p>${paragraph}</p>`).join("")
+        : "";
+      const list = selected.items
+        ? `<ul>${selected.items.map((item) => `<li>${item}</li>`).join("")}</ul>`
+        : "";
+
+      aboutDynamicCard.innerHTML = `
+        <h3>${selected.title}</h3>
+        ${paragraphs}
+        ${list}
+      `;
+    });
+  });
+
+</script>
+<!-- =========================
+     WEBSITE DEMO SECTION
+========================= -->
+
+<section class="demo-section" id="website-demo">
+
+  <!-- LEFT SIDE -->
+
+  <div class="demo-content">
+
+    <span class="demo-small-title">
+      WEBSITE DEMO
+    </span>
+
+    <h2>
+      Explore The
+      <span>Al Muwakkar Platform</span>
+    </h2>
+
+    <p>
+      Watch a quick walkthrough of the Al Muwakkar website
+      and discover how retirees can access services,
+      discounts, trips, clubs, and more through one platform.
+    </p>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+
+  <div class="laptop-container">
+
+    <!-- GLOW -->
+
+    <div class="laptop-glow"></div>
+
+    <!-- MACBOOK -->
+
+    <div class="laptop-frame">
+
+      <!-- CAMERA -->
+
+      <div class="camera"></div>
+
+      <!-- SCREEN -->
+
+      <div class="screen">
+
+        <!-- VIDEO -->
+
+        <!-- WEBSITE VIDEO -->
+<iframe
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/dsVIDD6HFhg?autoplay=1&mute=1&loop=1&playlist=dsVIDD6HFhg"
+  title="Al Muwakkar website demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+
+      </div>
+
+      <!-- KEYBOARD -->
+
+      <div class="keyboard"></div>
+
+    </div>
+
+    <!-- IPHONE 17 PRO -->
+
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+
+      <div class="phone-screen">
+     <!-- MOBILE VIDEO -->
+<iframe
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/DlkdhQ6zob4?autoplay=1&mute=1&loop=1&playlist=DlkdhQ6zob4"
+  title="Al Muwakkar mobile app demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- =========================
+     WHY CHOOSE US SECTION
+========================= -->
+
+<section class="choose-section">
+
+  <div class="choose-image">
+    <img src="image/why.png" alt="Why choose Al Muwakkar visual">
+  </div>
+
+  <div class="choose-content">
+    <span class="section-label">WHY CHOOSE US</span>
+    <h2>Why Choose Us?</h2>
+    <p>
+      Al Muwakkar is designed specially for retirees in Bahrain, combining
+      respectful design, useful services, and meaningful benefits in one place.
+    </p>
+
+    <div class="choose-hover-list">
+      <div class="choose-hover-item">
+        <div class="choose-circle">BH</div>
+        <div class="choose-hover-text">
+          <h3>First Bahraini Platform For Retirees</h3>
+          <p>
+            A dedicated platform created to support retirees in Bahrain through
+            useful services, opportunities, and community access.
+          </p>
+        </div>
+      </div>
+
+      <div class="choose-hover-item">
+        <div class="choose-circle">01</div>
+        <div class="choose-hover-text">
+          <h3>All Essential Services in One Platform</h3>
+          <p>
+            Discounts, jobs, trips, clubs, health support, and volunteering are
+            gathered in one trusted and easy-to-use digital experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="choose-hover-item">
+        <div class="choose-circle">%</div>
+        <div class="choose-hover-text">
+          <h3>Exclusive Discounts & Benefits</h3>
+          <p>
+            Retirees can access special discounts, offers, and retirement
+            benefits through the Al Muwakkar Card.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- =========================
+     AWESOME FEATURES SLIDER
+========================= -->
+
+<section class="feature-slider-section">
+
+  <!-- TITLE -->
+
+  <div class="feature-title">
+
+    <h2>Awesome Website Features</h2>
+
+    <p>
+      Al Muwakkar provides smart and senior-friendly
+      features to make the platform simple,
+      accessible, and comfortable for retirees.
+    </p>
+
+  </div>
+
+  <!-- SLIDER -->
+
+  <div class="feature-slider-wrapper">
+
+    <!-- LEFT BUTTON -->
+
+    <button class="slide-btn left-btn" onclick="prevFeature()">
+      &#10094;
+    </button>
+
+    <!-- FEATURES -->
+
+    <div class="feature-slider" id="featureSlider">
+
+      <!-- FEATURE -->
+
+      <div class="feature-item active">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v3"></path>
+            <rect x="5" y="6" width="14" height="12" rx="4"></rect>
+            <path d="M8 12h.01"></path>
+            <path d="M16 12h.01"></path>
+            <path d="M9 16c1.8 1 4.2 1 6 0"></path>
+          </svg>
+        </div>
+
+        <h3>Waqar AI Chatbot</h3>
+
+        <p>
+          AI support for emotional wellness and friendly interaction.
+        </p>
+
+      </div>
+
+      <!-- FEATURE -->
+
+      <div class="feature-item active">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h10"></path>
+            <path d="M4 17h7"></path>
+            <path d="M17 14l3 3 3-5"></path>
+          </svg>
+        </div>
+
+        <h3>Senior Mode</h3>
+
+        <p>
+          Easy mode with larger buttons and simplified navigation.
+        </p>
+
+      </div>
+
+      <!-- FEATURE -->
+
+      <div class="feature-item active">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.2 2.5 3.2 5.5 3.2 9s-1 6.5-3.2 9"></path>
+            <path d="M12 3c-2.2 2.5-3.2 5.5-3.2 9s1 6.5 3.2 9"></path>
+          </svg>
+        </div>
+
+        <h3>Arabic & English</h3>
+
+        <p>
+          Full bilingual support for a comfortable experience.
+        </p>
+
+      </div>
+
+      <!-- FEATURE -->
+
+      <div class="feature-item">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-7a8 8 0 1 1 18-4z"></path>
+            <path d="M9 10a3 3 0 0 1 6 1c0 2-3 2-3 4"></path>
+            <path d="M12 18h.01"></path>
+          </svg>
+        </div>
+
+        <h3>Support Chatbot</h3>
+
+        <p>
+          Helps retirees use website services step-by-step.
+        </p>
+
+      </div>
+
+      <!-- FEATURE -->
+
+      <div class="feature-item">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="M14.5 14.5L21 21"></path>
+            <path d="M8 12l2-5 2 5"></path>
+            <path d="M8.8 10.5h2.4"></path>
+          </svg>
+        </div>
+
+        <h3>Zoom Feature A+</h3>
+
+        <p>
+          Increase text size for retirees facing eye difficulties.
+        </p>
+
+      </div>
+
+      <!-- FEATURE -->
+
+      <div class="feature-item">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="6" height="6" rx="1.5"></rect>
+            <rect x="14" y="4" width="6" height="6" rx="1.5"></rect>
+            <rect x="4" y="14" width="6" height="6" rx="1.5"></rect>
+            <rect x="14" y="14" width="6" height="6" rx="1.5"></rect>
+          </svg>
+        </div>
+
+        <h3>6 Integrated Services</h3>
+
+        <p>
+          Jobs, discounts, clubs, trips, health support, and volunteering.
+        </p>
+
+      </div>
+
+      <!-- FEATURE -->
+
+      <div class="feature-item">
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 6h10"></path>
+            <path d="M8 12h10"></path>
+            <path d="M8 18h6"></path>
+            <path d="M4 6h.01"></path>
+            <path d="M4 12h.01"></path>
+            <path d="M4 18h.01"></path>
+          </svg>
+        </div>
+
+        <h3>Easy Registration</h3>
+
+        <p>
+          Simple forms help retirees join trips, clubs, jobs, and card services.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT BUTTON -->
+
+    <button class="slide-btn right-btn" onclick="nextFeature()">
+      &#10095;
+    </button>
+
+  </div>
+
+  <!-- LINE -->
+
+  <div class="slider-line">
+
+    <div class="slider-progress" id="sliderProgress"></div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     OUR TEAM SECTION
+========================= -->
+
+<section class="team-section" id="team">
+
+  <div class="team-top">
+    <div class="team-title">
+      <span class="section-label">OUR TEAM</span>
+      <h2>Meet The Team Behind Al Muwakkar</h2>
+      <p>
+        Three dedicated team members worked together to design a meaningful,
+        accessible, and senior-friendly platform for retirees in Bahrain.
+      </p>
+    </div>
+
+    <div class="team-hero" id="teamHero">
+      <img src="image/team.png" alt="Al Muwakkar team members" onerror="this.parentElement.classList.add('missing')">
+      <span class="team-name-label nouf">Nouf Almutawea</span>
+      <span class="team-name-label fatima">Fatima Ali</span>
+      <span class="team-name-label aysha">Aysha AbdulKareem</span>
+      <div class="team-placeholder">
+        Add your team image as <strong>team.png</strong> in this folder.
+      </div>
+    </div>
+  </div>
+
+  <div class="team-grid">
+    <a class="team-card" href="fatima.html">
+      <div class="member-photo">
+        <img src="image/fatima.png" alt="Fatima Ali" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="member-fallback" style="display:none;">F</span>
+      </div>
+      <h3>Fatima Ali</h3>
+      <span class="profile-link">View profile →</span>
+    </a>
+
+    <a class="team-card" href="nouf.html">
+      <div class="member-photo">
+        <img src="image/nouf.png" alt="Nouf Almutawea" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="member-fallback" style="display:none;">N</span>
+      </div>
+      <h3>Nouf Almutawea</h3>
+      <span class="profile-link">View profile →</span>
+    </a>
+
+    <a class="team-card" href="aisha.html">
+      <div class="member-photo">
+        <img src="image/aisha.png" alt="Aysha AbdulKareem" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="member-fallback" style="display:none;">A</span>
+      </div>
+      <h3>Aysha AbdulKareem</h3>
+      <span class="profile-link">View profile →</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer" id="contact">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img class="footer-logo" src="image/logo.png" alt="Al Muwakkar logo">
+   
+      <div class="footer-socials" aria-label="Social and contact links">
+        <a class="social-icon" href="https://www.instagram.com/almuwakkar?igsh=eWo4dW8wMjZiM3Nx" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path d="M17.5 6.5h.01"></path>
+          </svg>
+        </a>
+        <a class="social-icon youtube" href="https://youtube.com/@al-muwakkar?si=sCAo-93GHLX9Py4e" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 8.5c-.2-1.4-1.1-2.4-2.5-2.6C16.6 5.5 12 5.5 12 5.5s-4.6 0-6.5.4C4.1 6.1 3.2 7.1 3 8.5 2.7 10.1 2.7 12 2.7 12s0 1.9.3 3.5c.2 1.4 1.1 2.4 2.5 2.6 1.9.4 6.5.4 6.5.4s4.6 0 6.5-.4c1.4-.2 2.3-1.2 2.5-2.6.3-1.6.3-3.5.3-3.5s0-1.9-.3-3.5z"></path>
+            <path fill="#fff" d="M10 9.2v5.6l5-2.8-5-2.8z"></path>
+          </svg>
+        </a>
+        <a class="social-icon" href="mailto:almuwakkar@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M4 7l8 6 8-6"></path>
+          </svg>
+        </a>
+        <a class="social-icon" href="https://whatsapp.com/channel/0029VbBzl539hXEy2APAJ22p" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 19l1.2-3.5A7.5 7.5 0 1 1 9 18.8L5 19z"></path>
+            <path d="M9.5 8.5c.2 3 2.2 5 5 6"></path>
+            <path d="M9.5 8.5l1.2-.8 1 1.8-.8.8"></path>
+            <path d="M14.5 14.5l.8-.8 1.8 1-1 1.2"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#team">Our Team</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Al Muwakkar. Senior project platform.</p>
+    <p class="footer-tag">Designed for retirees in Bahrain</p>
+  </div>
+</footer>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  const featureItems = document.querySelectorAll(".feature-item");
+  const teamCards = document.querySelectorAll(".team-card");
+  const youtubeFrames = document.querySelectorAll("iframe[data-youtube-id]");
+
+  youtubeFrames.forEach((frame) => {
+    const videoId = frame.dataset.youtubeId;
+    const params = new URLSearchParams({
+      autoplay: "1",
+      mute: "1",
+      loop: "1",
+      playlist: videoId,
+      controls: "0",
+      modestbranding: "1",
+      playsinline: "1",
+      rel: "0"
+    });
+
+    if(window.location.protocol !== "file:"){
+      params.set("origin", window.location.origin);
+    }
+
+    frame.src = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+  });
+
+  let start = 0;
+
+  function getVisibleFeatureCount(){
+    if(window.innerWidth <= 700){
+      return 1;
+    }
+
+    if(window.innerWidth <= 1000){
+      return 2;
+    }
+
+    return 3;
+  }
+
+  function updateSlider(){
+    const visibleCount = getVisibleFeatureCount();
+    const maxStart = Math.max(featureItems.length - visibleCount, 0);
+
+    if(start > maxStart){
+      start = maxStart;
+    }
+
+    featureItems.forEach(item=>{
+      item.classList.remove("active");
+    });
+
+    for(let i = start; i < start + visibleCount; i++){
+
+      if(featureItems[i]){
+        featureItems[i].classList.add("active");
+      }
+
+    }
+
+    const progress = document.getElementById("sliderProgress");
+
+    progress.style.width = ((start + visibleCount) / featureItems.length) * 100 + "%";
+
+  }
+
+  function nextFeature(){
+    const visibleCount = getVisibleFeatureCount();
+
+    if(start < featureItems.length - visibleCount){
+      start++;
+    }else{
+      start = 0;
+    }
+
+    updateSlider();
+
+  }
+
+  function prevFeature(){
+    const visibleCount = getVisibleFeatureCount();
+
+    if(start > 0){
+      start--;
+    }else{
+      start = featureItems.length - visibleCount;
+    }
+
+    updateSlider();
+
+  }
+
+  updateSlider();
+  window.addEventListener("resize", updateSlider);
+
+  const teamObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold:0.2 });
+
+  teamCards.forEach((card) => teamObserver.observe(card));
+
+</script>
+
+</body>
+</html>
